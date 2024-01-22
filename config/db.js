@@ -18,18 +18,6 @@ const connectDB = async (app) => {
       collectionName: "session",
     });
 
-    app.use(
-      session({
-        secret: "your-secret-key",
-        resave: false,
-        saveUninitialized: true,
-        store: store,
-        cookie: {
-          maxAge: 1000 * 60 * 60 * 24, // 1 day
-        },
-      })
-    );
-
     console.log("Database Connected Successfully");
   } catch (error) {
     console.log("Failure in the database Connection:",error );
